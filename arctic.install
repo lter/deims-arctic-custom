@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+/*
+ * here we will create the necessary vocabularies for Arctic
+ * we need to examine the DEIMS D6 Arctice database, etc.
+ * the following are examples, to be re-written
+function arctic_install() {
+  // Create the Data Sets Vocabulary V vocabulary.
+  $description = st('Use tags to groups data sets into categories corresponding to the funding cycle');
+  $help = st('Enter a comma-separated list of words to describe your content.');
+  $vocabulary = (object) array(
+    'name' => st('Data Sets Vocabulary V'),
+    'description' => $description,
+    'machine_name' => 'data_sets_vocabulary_v',
+    'help' => $help,
+
+  );
+  taxonomy_vocabulary_save($vocabulary);
+    
+}
+*/

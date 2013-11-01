@@ -1,0 +1,7 @@
+name = Arctic
+description = Custom code and migrations specific to the Arctic LTER
+core = 7.x
+;dependencies[] = deims
+;files[] = migration/ArcticContentDataSetMigration.php
+;files[] = migration/ArcticContentPersonMigration.php
+files[] = migration/ArcticContentOrganizationMigration.php
