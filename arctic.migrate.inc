@@ -18,7 +18,7 @@ function arctic_migrate_api() {
 //                'source_vocabulary' => '5',
 //                'destination_vocabulary' => 'datasets_vocabulary_v',
 //                'group' => DEIMS_D6_MIGRATION_GROUP,
-            ),
+//            ),
         ),
     );
 }
