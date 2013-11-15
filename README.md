@@ -23,15 +23,18 @@ CHANGE things.
 
 In the Arctic Example, we do not have Core Areas. I suggest you comment
 out this block:
-//      'DeimsTaxonomyCoreAreas' => array(
-//        'class_name' => 'DrupalTerm6Migration',
-//        'description' => "Taxonomy migration for the 'Core areas' vocabulary.$
-//        'source_connection' => 'drupal6',
-//        'source_version' => 6,
-//        // @todo Make this vocabulary source ID automatic from the D6 databas$
-//        'source_vocabulary' => '1',
-//        'destination_vocabulary' => 'core_areas',
-//      ),
+
+      ),
+      'DeimsTaxonomyCoreAreas' => array(
+        'class_name' => 'DrupalTerm6Migration',
+        'description' => "Taxonomy migration for the 'Core areas' vocabulary.",
+        'source_connection' => 'drupal6',
+        'source_version' => 6,
+        // @todo Make this vocabulary source ID automatic from the D6 database.
+        'source_vocabulary' => '1',
+        'destination_vocabulary' => 'core_areas',
+      ),
+   
 
 Also, the next block assumes your LTER controlled has a vid=9,
 but Arctic's vid for the LTER controlled seems to be "2", so, look below,
@@ -47,4 +50,6 @@ third line from the bottom:
         'destination_vocabulary' => 'lter_controlled_vocabulary',
       ),
 
-That's it.
+After this, you can enable the "arctic" module. Included are some "features". What
+those contain are two or three taxonomic references for the data set content type.
+Those work with these migrations.
