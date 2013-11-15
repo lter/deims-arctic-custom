@@ -2,8 +2,7 @@
 
 /**
  * Implements hook_install().
- */
-/*
+ *
  * here we will create the necessary vocabularies for Arctic
  * we need to examine the DEIMS D6 Arctice database, etc.
  * the following are examples, to be re-written
@@ -34,4 +33,3 @@ function arctic_install() {
   taxonomy_vocabulary_save($vocabulary);
 
 }
-*/
