@@ -27,15 +27,26 @@ class ArcticContentDataSetMigration extends DeimsContentDataSetMigration {
 
     $this->addFieldMapping('field_dataset_project_keywords', '4')
       ->sourceMigration('ArcticTaxonomyProjectVocabulary');
-    $this->addFieldMapping('field_keywords:source_type')
+    $this->addFieldMapping('field_dataset_project_keywords:source_type')
       ->defaultValue('tid');
 
-  }
 //
 // likewise for vocabularies "Species".
 // 1) create the vocabulary in D7 (use arctic.install, this may be done..
 // 2) migrate the vocabulary (this was done in arctic.migrate.inc)
 // 3) create a Term Reference type field for "species" in content type
 //    data set, and then use a code chunk like the one above this.
+
+    $this->addFieldMapping('field_dataset_taxa', '3')
+      ->sourceMigration('ArcticTaxonomySpeciesVocabulary');
+    $this->addFieldMapping('field_dataset_taxa:source_type')
+      ->defaultValue('tid');
+
+    $this->addFieldMapping('field_dataset_actic_keywords', '6')
+      ->sourceMigration('ArcticTaxonomySpeciesVocabulary');
+    $this->addFieldMapping('field_dataset_arctic_keywords:source_type')
+      ->defaultValue('tid');
+
+   }
 
 }

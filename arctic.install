@@ -7,16 +7,17 @@
  * here we will create the necessary vocabularies for Arctic
  * we need to examine the DEIMS D6 Arctice database, etc.
  * the following are examples, to be re-written
+
 function arctic_install() {
+
   // Create the Species Vocabulary .
-  $description = st('Use tags to group data sets into species taxa relevant to the data set');
-  $help = st('Enter a comma-separated list of words to describe your content.');
+  $description = st('Arctic LTER Taxon Vocabulary');
+  $help = st('Enter a comma-separated list of taxonomic rank terms for the organisms in this study. This can be to Genera and species or at a higher rank, e.g. Salix glauca, Carex.');
   $vocabulary = (object) array(
-    'name' => st('Species Taxa'),
+    'name' => st('Taxa'),
     'description' => $description,
     'machine_name' => 'taxa',
     'help' => $help,
-
   );
   taxonomy_vocabulary_save($vocabulary);
 
@@ -26,7 +27,7 @@ function arctic_install() {
   $vocabulary = (object) array(
     'name' => st('Arctic LTER Vocabulary'),
     'description' => $description,
-    'machine_name' => 'arctic_lter_vocabulary',
+    'machine_name' => 'arc_lter_vocabulary',
     'help' => $help,
 
   );
