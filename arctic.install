@@ -8,17 +8,29 @@
  * we need to examine the DEIMS D6 Arctice database, etc.
  * the following are examples, to be re-written
 function arctic_install() {
-  // Create the Data Sets Vocabulary V vocabulary.
-  $description = st('Use tags to groups data sets into categories corresponding to the funding cycle');
+  // Create the Species Vocabulary .
+  $description = st('Use tags to group data sets into species taxa relevant to the data set');
   $help = st('Enter a comma-separated list of words to describe your content.');
   $vocabulary = (object) array(
-    'name' => st('Data Sets Vocabulary V'),
+    'name' => st('Species Taxa'),
     'description' => $description,
-    'machine_name' => 'data_sets_vocabulary_v',
+    'machine_name' => 'taxa',
     'help' => $help,
 
   );
   taxonomy_vocabulary_save($vocabulary);
-    
+
+  // Create the Arctic LTER Vocabulary .
+  $description = st('Use tags to group data sets into data set categories');
+  $help = st('Enter a comma-separated list of words to describe your content.');
+  $vocabulary = (object) array(
+    'name' => st('Arctic LTER Vocabulary'),
+    'description' => $description,
+    'machine_name' => 'arctic_lter_vocabulary',
+    'help' => $help,
+
+  );
+  taxonomy_vocabulary_save($vocabulary);
+
 }
 */
