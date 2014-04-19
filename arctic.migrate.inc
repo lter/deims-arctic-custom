@@ -30,9 +30,12 @@
  * Implements hook_migrate_api().
  */
 function arctic_migrate_api() {
-  return array(
+  $info = array(
     'api' => 2,
     'migrations' => array(
+      'ArcticContentBlog' => array(
+        'class_name' => 'ArcticContentBlogMigration',
+      ),
       'ArcticTaxonomyARCVocabulary' => array(
         'class_name' => 'DrupalTerm6Migration',
         'description' => "Taxonomy migration for the 'Data Sets Arctic Vocabulary' vocabulary.",
@@ -40,7 +43,6 @@ function arctic_migrate_api() {
         'source_version' => 6,
         'source_vocabulary' => '6',
         'destination_vocabulary' => 'arc_lter_vocabulary',
-        'group_name' => DEIMS_D6_MIGRATION_GROUP,
       ),
 
 // I doubt this will really override the default DEIMS
@@ -55,7 +57,6 @@ function arctic_migrate_api() {
  *       'source_version' => 6,
  *       'source_vocabulary' => '2',
  *       'destination_vocabulary' => 'lter_controlled_vocabulary',
- *       'group_name' => DEIMS_D6_MIGRATION_GROUP,
  *    ),
 */
       'ArcticTaxonomySpeciesVocabulary' => array(
@@ -65,7 +66,6 @@ function arctic_migrate_api() {
          'source_version' => 6,
          'source_vocabulary' => '3',
          'destination_vocabulary' => 'taxa',
-         'group_name' => DEIMS_D6_MIGRATION_GROUP,
       ),
       'ArcticTaxonomyProjectVocabulary' => array(
          'class_name' => 'DrupalTerm6Migration',
@@ -74,10 +74,13 @@ function arctic_migrate_api() {
          'source_version' => 6,
          'source_vocabulary' => '4',
          'destination_vocabulary' => 'section',
-         'group_name' => DEIMS_D6_MIGRATION_GROUP,
       ),
     ),
   );
+  foreach ($info['migrations'] as &$migration) {
+    $migration['group_name'] = DEIMS_D6_MIGRATION_GROUP;
+  }
+  return $info;
 }
 /**
  * Implements hook_deims_migration_overrides().
