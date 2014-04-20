@@ -4,6 +4,7 @@ core = 7.x
 ;dependencies[] = deims
 files[] = migration/ArcticContentBlogMigration.php
 files[] = migration/ArcticContentDataSetMigration.php
+files[] = migration/ArcticContentNewsMigration.php
 files[] = migration/ArcticContentOrganizationMigration.php
 files[] = migration/ArcticContentPageMigration.php
 files[] = migration/ArcticContentPersonMigration.php

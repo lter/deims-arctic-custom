@@ -9,7 +9,7 @@
  *|   3 | Species                    |
  *|   4 | Projects                   |
  *|   5 | Image Galleries            |
- *|   6 | Arctic LTER keyword terms  |  <--- this one ??
+ *|   6 | Arctic LTER keyword terms  |
  *
  *| vid | type             |
  *+-----+------------------+
@@ -36,14 +36,17 @@ function arctic_migrate_api() {
       'ArcticContentBlog' => array(
         'class_name' => 'ArcticContentBlogMigration',
       ),
-//      'ArcticTaxonomyARCVocabulary' => array(
-//        'class_name' => 'DrupalTerm6Migration',
-//        'description' => "Taxonomy migration for the 'Data Sets Arctic Vocabulary' vocabulary.",
-//        'source_connection' => 'drupal6',
-//        'source_version' => 6,
-//        'source_vocabulary' => '6',
-//        'destination_vocabulary' => 'arc_lter_vocabulary',
-//      ),
+      'ArcticContentnews' => array(
+        'class_name' => 'ArcticContentNewsMigration',
+      ),
+      'ArcticTaxonomyARCVocabulary' => array(
+        'class_name' => 'DrupalTerm6Migration',
+        'description' => "Taxonomy migration for the 'Data Sets Arctic Vocabulary' vocabulary.",
+        'source_connection' => 'drupal6',
+        'source_version' => 6,
+        'source_vocabulary' => '6',
+        'destination_vocabulary' => 'arc_lter_vocabulary',
+      ),
 
 // I doubt this will really override the default DEIMS
 // migration, that's why im commenting it out, and recommeding we change
@@ -89,7 +92,7 @@ function arctic_deims_migration_overrides() {
   return array(
     'DeimsContentDataSet' => array('class_name' => 'ArcticContentDataSetMigration'),
     'DeimsContentOrganization' => array('class_name' => 'ArcticContentOrganizationMigration'),
-    'DeimsContentPage' => array('class_name' => 'ArcticContentPageMigration'),
     'DeimsContentPerson' => array('class_name' => 'ArcticContentPersonMigration'),
+    'DeimsContentPage' => array('class_name' => 'ArcticContentPageMigration'),
   );
 }
