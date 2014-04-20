@@ -5,4 +5,4 @@ core = 7.x
 files[] = migration/ArcticContentBlogMigration.php
 files[] = migration/ArcticContentDataSetMigration.php
 files[] = migration/ArcticContentOrganizationMigration.php
-;files[] = migration/ArcticContentPersonMigration.php
+files[] = migration/ArcticContentPersonMigration.php
