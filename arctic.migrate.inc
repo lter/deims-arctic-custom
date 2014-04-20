@@ -88,7 +88,8 @@ function arctic_migrate_api() {
 function arctic_deims_migration_overrides() {
   return array(
     'DeimsContentDataSet' => array('class_name' => 'ArcticContentDataSetMigration'),
-    'DeimsContentPerson' => array('class_name' => 'ArcticContentPersonMigration'),
     'DeimsContentOrganization' => array('class_name' => 'ArcticContentOrganizationMigration'),
+    'DeimsContentPage' => array('class_name' => 'ArcticContentPageMigration'),
+    'DeimsContentPerson' => array('class_name' => 'ArcticContentPersonMigration'),
   );
 }
