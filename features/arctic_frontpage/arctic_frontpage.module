@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Arctic Frontpage feature.
+ */
+
+include_once 'arctic_frontpage.features.inc';
